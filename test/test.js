@@ -1,8 +1,11 @@
-describe("jasmine works", function() {
-  it("true is true", function() {
-    expect(true).toBe(true);
+describe("Board", function() {
+  beforeEach(function() {
+    let board = new Board();
   });
-  it("false is not true", function() {
-    expect(false).not.toBe(true);
+
+  describe("#initialize", function() {
+    it("starts with an empty 4x4 nested array", function() {
+      expect(board.grid.length).toEqual(16);
+    });
   });
 });
