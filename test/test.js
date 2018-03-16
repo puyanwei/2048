@@ -10,4 +10,12 @@ describe("Game", function() {
       expect(game.board.length).toEqual(16);
     });
   });
+
+  describe("#addNumberToBoard", function() {
+    it("puts a 2 or 4", function() {
+      game.addNumberToBoard(2, 15);
+      //prettier-ignore
+      expect(game.board).toEqual( [], [], [], [], [], [], [], [], [], [], [], [], [], [], [2], []);
+    });
+  });
 });
