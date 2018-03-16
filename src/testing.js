@@ -1,3 +1,3 @@
-function Board() {
-  this.grid = Array(16);
+function Game() {
+  this.board = Array(16);
 }
