@@ -24,15 +24,10 @@ describe("Game", function() {
     });
   });
 
-  describe("#rowGetter", function() {
-    it("gets the row number based on index", function() {
-      expect(game.rowGetter(14)).toEqual(3);
-    });
-  });
-
-  describe("#colGetter", function() {
-    it("gets the column number based on index", function() {
-      expect(game.colGetter(14)).toEqual(2);
+  describe("#isEmpty", function() {
+    it("returns true if number is zero", function() {
+      expect(game.isEmpty(0)).toBe(true);
+      expect(game.isEmpty(2)).toBe(false);
     });
   });
 });
