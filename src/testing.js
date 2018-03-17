@@ -1,7 +1,15 @@
 function Game() {
-  this.board = Array(16);
+  this.board = [
+    ["", "", "", ""],
+    ["", "", "", ""],
+    ["", "", "", ""],
+    ["", "", "", ""]
+  ];
 }
 
 Game.prototype.addNumberToBoard = function(number, index) {
-  this.board[index] = number;
+  let row = Math.floor(index / 4);
+  let cols = index % 4;
+  this.board[row][cols] = number;
+  console.table(this.board);
 };

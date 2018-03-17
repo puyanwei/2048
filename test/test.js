@@ -7,19 +7,20 @@ describe("Game", function() {
 
   describe("#initialize", function() {
     it("starts with an empty array of 16", function() {
-      expect(game.board.length).toEqual(16);
+      expect(game.board.length).toEqual(4);
+      expect(game.board[0].length).toEqual(4);
     });
   });
 
   describe("#addNumberToBoard", function() {
     it("puts a 2 or 4 on to the board", function() {
       game.addNumberToBoard(2, 14);
-      expect(game.board).toEqual(
+      expect(game.board).toEqual([
         ["", "", "", ""],
         ["", "", "", ""],
         ["", "", "", ""],
         ["", "", 2, ""]
-      );
+      ]);
     });
   });
 });
