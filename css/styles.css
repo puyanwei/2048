@@ -1,0 +1,25 @@
+body {
+  width: 100%;
+  text-align: center;
+  font-family: "Helvetica", "Arial";
+}
+
+table {
+  margin: 0 auto;
+  text-align: center;
+  border-collapse: collapse;
+  font-family: Calibri, sans-serif;
+  table-align: center;
+}
+
+tbody {
+  border: solid medium;
+}
+
+td {
+  border: solid thin;
+  height: 120px;
+  width: 120px;
+  text-align: center;
+  padding: 0;
+}

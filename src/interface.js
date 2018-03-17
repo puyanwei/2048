@@ -1,3 +1,1 @@
-$(window).on("load", function(e) {
-  alert("this works");
-});
+$(window).on("load", function(event) {});
