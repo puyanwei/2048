@@ -16,10 +16,14 @@ $(window).on("load", event => {
   }
 
   function generateNumber() {
-    let row = game.randomiser(5);
-    let cols = game.randomiser(5);
-    let index = game.randomiser(2) === 0 ? (number = 2) : (number = 4);
-    if (true) {
+    let row = game.randomiser(4);
+    let cols = game.randomiser(4);
+    let number;
+    game.randomiser(2) === 0 ? (number = 2) : (number = 4);
+    if (game.isEmpty(game.board[row][cols])) {
+      game.addNumberToBoard(number, row, cols);
+    } else {
+      generateNumber();
     }
   }
 
