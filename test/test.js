@@ -15,7 +15,7 @@ describe("Game", function() {
     it("puts a 2 or 4", function() {
       game.addNumberToBoard(2, 14);
       //prettier-ignore
-      expect(game.board).toEqual([null, null, null, null, null, null, null, null, null, null, null, null, null, null, 2, null])
+      expect(game.board).toEqual(["", "", "", "", "", "", "", "", "", "", "", "", "", "", 2, ""])
     });
   });
 });
