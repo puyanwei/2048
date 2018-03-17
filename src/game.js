@@ -8,8 +8,8 @@ function Game() {
 }
 
 Game.prototype.addNumberToBoard = function(number, index) {
-  let row = Math.floor(index / 4);
+  let rows = Math.floor(index / 4);
   let cols = index % 4;
-  this.board[row][cols] = number;
+  this.board[rows][cols] = number;
   console.table(this.board);
 };
