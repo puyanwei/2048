@@ -22,6 +22,16 @@ describe("Game", function() {
         [0, 0, 2, 0]
       ]);
     });
+    it("puts a 2 or 4 on to the board", function() {
+      // prettier-ignore
+      game.board = [
+        [0, 0, 0, 0],
+        [0, 2, 0, 0],
+        [0, 0, 0, 0],
+        [0, 0, 0, 0]
+      ]
+      expect(game.addNumberToBoard(2, 5)).toThrow("cell already taken");
+    });
   });
 
   describe("#isEmpty", function() {
