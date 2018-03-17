@@ -1,20 +1,21 @@
-describe("Game", function() {
+describe("Game", () => {
   let game;
 
-  beforeEach(function() {
+  beforeEach(() => {
     game = new Game();
   });
 
-  describe("#initialize", function() {
-    it("starts with an empty array of 16", function() {
+  describe("#initialize", () => {
+    it("starts with an empty array of 16", () => {
       expect(game.board.length).toEqual(4);
       expect(game.board[0].length).toEqual(4);
     });
   });
 
-  describe("#addNumberToBoard", function() {
-    it("puts a 2 or 4 on to the board", function() {
+  describe("#addNumberToBoard", () => {
+    it("puts a 2 or 4 on to the board", () => {
       game.addNumberToBoard(2, 14);
+      console.log(game.board);
       expect(game.board).toEqual([
         [0, 0, 0, 0],
         [0, 0, 0, 0],
@@ -22,7 +23,7 @@ describe("Game", function() {
         [0, 0, 2, 0]
       ]);
     });
-    it("puts a 2 or 4 on to the board", function() {
+    it("throws an error if the cell is already taken", () => {
       // prettier-ignore
       game.board = [
         [0, 0, 0, 0],
@@ -30,12 +31,14 @@ describe("Game", function() {
         [0, 0, 0, 0],
         [0, 0, 0, 0]
       ]
-      expect(game.addNumberToBoard(2, 5)).toThrow("cell already taken");
+      expect(() => {
+        game.addNumberToBoard(2, 5);
+      }).toThrow("cell already taken");
     });
   });
 
-  describe("#isEmpty", function() {
-    it("returns true if number is zero", function() {
+  describe("#isEmpty", () => {
+    it("returns true if number is zero", () => {
       expect(game.isEmpty(0)).toBe(true);
       expect(game.isEmpty(2)).toBe(false);
     });

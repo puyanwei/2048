@@ -11,7 +11,12 @@ function Game() {
 Game.prototype.addNumberToBoard = function(number, index) {
   let rows = Math.floor(index / 4);
   let cols = index % 4;
-  this.board[rows][cols] = number;
+  let cell = this.board[rows][cols];
+  if (this.isEmpty(cell)) {
+    this.board[rows][cols] = number;
+  } else {
+    throw "cell already taken";
+  }
 };
 
 Game.prototype.isEmpty = function(number) {
