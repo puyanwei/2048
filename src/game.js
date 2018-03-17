@@ -13,3 +13,7 @@ Game.prototype.addNumberToBoard = function(number, index) {
   let cols = index % 4;
   this.board[rows][cols] = number;
 };
+
+Game.prototype.isEmpty = function(number) {
+  return number === 0;
+};
