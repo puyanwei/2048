@@ -8,11 +8,14 @@ function Game() {
 }
 
 Game.prototype.addNumberToBoard = function(number, index) {
-  let cols = index % 4;
-  this.board[this.rowGetter(index)][cols] = number;
+  this.board[this.rowGetter(index)][this.colGetter(index)] = number;
   console.table(this.board);
 };
 
 Game.prototype.rowGetter = function(index) {
   return Math.floor(index / 4);
+};
+
+Game.prototype.colGetter = function(index) {
+  return index % 4;
 };
