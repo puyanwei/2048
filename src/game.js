@@ -19,6 +19,10 @@ Game.prototype.addNumberToBoard = function(number, index) {
   }
 };
 
+Game.prototype.randomiser = function(limit) {
+  return Math.floor(Math.random() * limit);
+};
+
 Game.prototype.isEmpty = function(number) {
   return number === 0;
 };

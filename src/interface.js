@@ -13,6 +13,6 @@ $(window).on("load", event => {
       cells[i].innerText = arr[i];
     }
   }
-
+  game.addNumberToBoard(2, game.randomiser(15));
   updateBoard();
 });
