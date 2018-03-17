@@ -1,14 +1,16 @@
-$(window).on("load", function(event) {
-  var game = new Game();
+$(window).on("load", event => {
+  let game = new Game();
 
   function updateBoard() {
-    var cells = $("td");
-    for (var i = 0; i < cells.length; i++) {
-      for (var rows = 0; rows < game.board[rows].length; rows++) {
-        for (var cols = 0; cols < game.board[row][cols].length; cols++) {
-          cells[i].innerText = game.board[rows][cols];
-        }
+    let cells = $("td");
+    let arr = [];
+    for (let rows = 0; rows < game.board.length; rows++) {
+      for (let cols = 0; cols < game.board[rows].length; cols++) {
+        arr.push(game.board[rows][cols]);
       }
+    }
+    for (let i = 0; i < cells.length; i++) {
+      cells[i].innerText = arr[i];
     }
   }
 

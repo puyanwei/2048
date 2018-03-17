@@ -4,13 +4,12 @@ function Game() {
     [0, 0, 0, 0],
     [0, 0, 0, 0],
     [0, 0, 0, 0],
-    [0, 0, 0, 0]
+    [0, 0, 2, 0]
   ];
 }
 
 Game.prototype.addNumberToBoard = function(number, index) {
   this.board[this.rowGetter(index)][this.colGetter(index)] = number;
-  console.table(this.board);
 };
 
 Game.prototype.rowGetter = function(index) {
