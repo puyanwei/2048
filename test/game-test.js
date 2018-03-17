@@ -16,10 +16,10 @@ describe("Game", function() {
     it("puts a 2 or 4 on to the board", function() {
       game.addNumberToBoard(2, 14);
       expect(game.board).toEqual([
-        ["", "", "", ""],
-        ["", "", "", ""],
-        ["", "", "", ""],
-        ["", "", 2, ""]
+        [0, 0, 0, 0],
+        [0, 0, 0, 0],
+        [0, 0, 0, 0],
+        [0, 0, 2, 0]
       ]);
     });
   });
