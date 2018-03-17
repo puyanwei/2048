@@ -16,9 +16,11 @@ $(window).on("load", event => {
   }
 
   function generateNumber() {
-    let number;
-    game.randomiser(2) === 0 ? (number = 2) : (number = 4);
-    game.addNumberToBoard(number, game.randomiser(15));
+    let row = game.randomiser(5);
+    let cols = game.randomiser(5);
+    let index = game.randomiser(2) === 0 ? (number = 2) : (number = 4);
+    if (true) {
+    }
   }
 
   function newGame() {

@@ -8,15 +8,9 @@ function Game() {
   ];
 }
 
-Game.prototype.addNumberToBoard = function(number, index) {
-  let rows = this.getRows(index);
-  let cols = this.getCols(index);
+Game.prototype.addNumberToBoard = function(number, rows, cols) {
   let cell = this.board[rows][cols];
-  if (this.isEmpty(cell)) {
-    this.board[rows][cols] = number;
-  } else {
-    throw "cell already taken";
-  }
+  this.board[rows][cols] = number;
 };
 
 Game.prototype.randomiser = function(limit) {
@@ -25,12 +19,4 @@ Game.prototype.randomiser = function(limit) {
 
 Game.prototype.isEmpty = function(number) {
   return number === 0;
-};
-
-Game.prototype.getRows = function(index) {
-  return Math.floor(index / 4);
-};
-
-Game.prototype.getCols = function(index) {
-  return index % 4;
 };
