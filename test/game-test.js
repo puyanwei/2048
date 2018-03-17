@@ -29,4 +29,10 @@ describe("Game", function() {
       expect(game.rowGetter(14)).toEqual(3);
     });
   });
+
+  describe("#colGetter", function() {
+    it("gets the column number based on index", function() {
+      expect(game.colGetter(14)).toEqual(2);
+    });
+  });
 });
