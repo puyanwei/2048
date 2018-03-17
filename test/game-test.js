@@ -26,7 +26,7 @@ describe("Game", function() {
 
   describe("#rowGetter", function() {
     it("gets the row number based on index", function() {
-      expect(game.game.rowGetter(14)).toEqual(3);
+      expect(game.rowGetter(14)).toEqual(3);
     });
   });
 });
