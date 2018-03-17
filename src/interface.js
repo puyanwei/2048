@@ -14,6 +14,18 @@ $(window).on("load", event => {
       cells[i].innerText = arr[i];
     }
   }
-  game.addNumberToBoard(2, game.randomiser(15));
+
+  function generateNumber() {
+    let number;
+    game.randomiser(2) === 0 ? (number = 2) : (number = 4);
+    game.addNumberToBoard(number, game.randomiser(15));
+  }
+
+  function newGame() {
+    generateNumber();
+    generateNumber();
+  }
+
+  newGame();
   updateBoard();
 });
