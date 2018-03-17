@@ -1,5 +1,5 @@
 function Game() {
-  this.board = Array(16).fill("");
+  this.board = Array(16);
 }
 
 Game.prototype.addNumberToBoard = function(number, index) {
