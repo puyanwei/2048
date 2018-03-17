@@ -9,8 +9,8 @@ function Game() {
 }
 
 Game.prototype.addNumberToBoard = function(number, index) {
-  let rows = Math.floor(index / 4);
-  let cols = index % 4;
+  let rows = this.getRows(index);
+  let cols = this.getCols(index);
   let cell = this.board[rows][cols];
   if (this.isEmpty(cell)) {
     this.board[rows][cols] = number;
@@ -21,4 +21,12 @@ Game.prototype.addNumberToBoard = function(number, index) {
 
 Game.prototype.isEmpty = function(number) {
   return number === 0;
+};
+
+Game.prototype.getRows = function(index) {
+  return Math.floor(index / 4);
+};
+
+Game.prototype.getCols = function(index) {
+  return index % 4;
 };
