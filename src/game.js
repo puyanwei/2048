@@ -20,3 +20,8 @@ Game.prototype.randomiser = function(limit) {
 Game.prototype.isEmpty = function(number) {
   return number === 0;
 };
+
+Game.prototype.slide = function(array) {
+  array = array.filter(val => val);
+  return array;
+};
