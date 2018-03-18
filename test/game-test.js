@@ -36,4 +36,10 @@ describe("Game", () => {
       expect(game.slide(["", 4, "", 2])).toEqual(["", "", 4, 2]);
     });
   });
+
+  describe("#combine", () => {
+    it("combines numbers if they are the same", () => {
+      expect(game.slide(["", 4, "", 4])).toEqual(["", "", "", 8]);
+    });
+  });
 });
