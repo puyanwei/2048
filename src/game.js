@@ -1,10 +1,10 @@
 function Game() {
   // prettier-ignore
   this.board = [
-    [0, 0, 0, 0],
-    [0, 0, 0, 0],
-    [0, 0, 0, 0],
-    [0, 0, 0, 0]
+    ["", "", "", ""],
+    ["", "", "", ""],
+    ["", "", "", ""],
+    ["", "", "", ""]
   ];
 }
 
@@ -18,14 +18,14 @@ Game.prototype.randomiser = function(limit) {
 };
 
 Game.prototype.isEmpty = function(number) {
-  return number === 0;
+  return number === "";
 };
 
 Game.prototype.slide = function(array) {
   let noZeros = array.filter(val => val);
   let missing = 4 - noZeros.length;
   let shifted = Array(missing)
-    .fill(0)
+    .fill("")
     .concat(noZeros);
   return shifted;
 };
