@@ -22,18 +22,6 @@ describe("Game", () => {
         [0, 0, 2, 0]
       ]);
     });
-    it("throws an error if the cell is already taken", () => {
-      // prettier-ignore
-      game.board = [
-        [0, 0, 0, 0],
-        [0, 2, 0, 0],
-        [0, 0, 0, 0],
-        [0, 0, 0, 0]
-      ]
-      expect(() => {
-        game.addNumberToBoard(2, 5);
-      }).toThrow("cell already taken");
-    });
   });
 
   describe("#isEmpty", () => {

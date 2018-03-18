@@ -1,6 +1,11 @@
 $(window).on("load", event => {
   let game = new Game();
 
+  $("#add").on("click", () => {
+    generateNumber();
+    updateBoard();
+  });
+
   function updateBoard() {
     let cells = $("td");
     let arr = [];
