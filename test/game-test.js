@@ -52,4 +52,34 @@ describe("Game", () => {
       expect(game.slideAndCombine([2, 4, 2, 2])).toEqual(["", 2, 4, 4]);
     });
   });
+
+  describe("#copyBoard", () => {
+    it("copies the 4 x 4 board state", () => {
+      let mockBoard = [[2, 3, 2, 2], [2, 2, 4, 2], [2, 2, 2, 2], [2, 2, 2, 2]];
+      expect(game.copyBoard(mockBoard)).toEqual([
+        [2, 3, 2, 2],
+        [2, 2, 4, 2],
+        [2, 2, 2, 2],
+        [2, 2, 2, 2]
+      ]);
+    });
+  });
+
+  describe("#compare", () => {
+    it("compares two 4 by 4 board states", () => {
+      let mockBoardOne = [
+        [2, 3, 2, 2],
+        [2, 2, 4, 2],
+        [2, 2, 2, 2],
+        [2, 2, 2, 2]
+      ];
+      let mockBoardTwo = [
+        [2, 3, 2, 2],
+        [2, 2, 4, 2],
+        [2, 2, 2, 2],
+        [2, 2, 2, 2]
+      ];
+      expect(game.compare(mockBoardOne, mockBoardTwo)).toBe(true);
+    });
+  });
 });
