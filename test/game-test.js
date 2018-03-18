@@ -65,7 +65,7 @@ describe("Game", () => {
     });
   });
 
-  describe("#compare", () => {
+  describe("#isChange", () => {
     it("compares two 4 by 4 board states", () => {
       let mockBoardOne = [
         [2, 3, 2, 2],
@@ -79,7 +79,7 @@ describe("Game", () => {
         [2, 2, 2, 2],
         [2, 2, 2, 2]
       ];
-      expect(game.compare(mockBoardOne, mockBoardTwo)).toBe(true);
+      expect(game.isChange(mockBoardOne, mockBoardTwo)).toBe(false);
     });
   });
 });

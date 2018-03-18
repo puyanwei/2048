@@ -2,20 +2,24 @@ $(window).on("load", event => {
   let game = new Game();
 
   $("#add").on("click", () => {
+    let prevBoard = game.copyBoard(game.board);
     slideRight();
+    isGameOver(prevBoard);
   });
 
   function slideRight() {
-    let prevBoard = game.copyBoard(game.board);
     for (let i = 0; i < 4; i++) {
       game.board[i] = game.slideAndCombine(game.board[i]);
     }
-    let changed = game.compare(prevBoard, game.board);
+  }
+
+  function isGameOver(prevBoard) {
+    let changed = game.isChange(prevBoard, game.board);
     if (changed) {
       generateNumber();
       updateBoardToPage();
     } else {
-      console.log("no more moves");
+      console.log("game over");
     }
   }
 

@@ -64,10 +64,10 @@ Game.prototype.copyBoard = function(grid) {
   return newGrid;
 };
 
-Game.prototype.compare = function(a, b) {
+Game.prototype.isChange = function(a, b) {
   for (let i = 0; i < 4; i++) {
     for (let j = 0; j < 4; j++) {
-      if (a[i][j] === b[i][j]) {
+      if (a[i][j] !== b[i][j]) {
         return true;
       }
     }
