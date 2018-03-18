@@ -41,3 +41,10 @@ Game.prototype.combine = function(row) {
   }
   return row;
 };
+
+Game.prototype.slideAndCombine = function(row) {
+  row = this.slide(row);
+  row = this.combine(row);
+  row = this.slide(row);
+  return row;
+};
