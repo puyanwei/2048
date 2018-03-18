@@ -6,11 +6,17 @@ $(window).on("load", event => {
   });
 
   function slideRight() {
+    let prevBoard = game.copyBoard(game.board);
     for (let i = 0; i < 4; i++) {
       game.board[i] = game.slideAndCombine(game.board[i]);
     }
-    generateNumber();
-    updateBoardToPage();
+    let changed = game.compare(prevBoard, game.board);
+    if (changed) {
+      generateNumber();
+      updateBoardToPage();
+    } else {
+      console.log("no more moves");
+    }
   }
 
   function updateBoardToPage() {

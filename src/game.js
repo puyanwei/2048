@@ -48,3 +48,28 @@ Game.prototype.slideAndCombine = function(row) {
   row = this.slide(row);
   return row;
 };
+
+Game.prototype.copyBoard = function(grid) {
+  newGrid = [
+    ["", "", "", ""],
+    ["", "", "", ""],
+    ["", "", "", ""],
+    ["", "", "", ""]
+  ];
+  for (let i = 0; i < 4; i++) {
+    for (let j = 0; j < 4; j++) {
+      newGrid[i][j] = grid[i][j];
+    }
+  }
+  return newGrid;
+};
+
+Game.prototype.compare = function(a, b) {
+  for (let i = 0; i < 4; i++) {
+    for (let j = 0; j < 4; j++) {
+      if (a[i][j] !== b[i][j]) {
+        return true;
+      }
+    }
+  }
+};
