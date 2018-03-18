@@ -82,4 +82,17 @@ describe("Game", () => {
       expect(game.isChange(mockBoardOne, mockBoardTwo)).toBe(false);
     });
   });
+
+  describe("#reset", () => {
+    it("resets the board", () => {
+      let mockBoard = [[2, 3, 2, 2], [2, 2, 4, 2], [2, 2, 2, 2], [2, 2, 2, 2]];
+      game.board = mockBoard;
+      expect(game.reset()).toEqual([
+        ["", "", "", ""],
+        ["", "", "", ""],
+        ["", "", "", ""],
+        ["", "", "", ""]
+      ]);
+    });
+  });
 });

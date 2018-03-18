@@ -1,10 +1,14 @@
 $(window).on("load", event => {
   let game = new Game();
 
+  // $("#add").on("click", () => {
+  //   let prevBoard = game.copyBoard(game.board);
+  //   slideRight();
+  //   isGameOver(prevBoard);
+  // });
+
   $("#add").on("click", () => {
-    let prevBoard = game.copyBoard(game.board);
-    slideRight();
-    isGameOver(prevBoard);
+    game.reset();
   });
 
   function slideRight() {
