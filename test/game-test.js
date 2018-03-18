@@ -30,4 +30,10 @@ describe("Game", () => {
       expect(game.isEmpty(2)).toBe(false);
     });
   });
+
+  describe("#slide", () => {
+    it("slides all the non zero numbers to the right", () => {
+      expect(game.slide([0, 2, 4, 0, 2])).toEqual([2, 4, 2]);
+    });
+  });
 });

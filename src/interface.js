@@ -3,10 +3,10 @@ $(window).on("load", event => {
 
   $("#add").on("click", () => {
     generateNumber();
-    updateBoard();
+    updateBoardToPage();
   });
 
-  function updateBoard() {
+  function updateBoardToPage() {
     let cells = $("td");
     let arr = [];
     for (let rows = 0; rows < game.board.length; rows++) {
@@ -34,7 +34,7 @@ $(window).on("load", event => {
   function newGame() {
     generateNumber();
     generateNumber();
-    updateBoard();
+    updateBoardToPage();
   }
 
   newGame();
