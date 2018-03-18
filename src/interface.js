@@ -7,9 +7,7 @@ $(window).on("load", event => {
 
   function slideRight() {
     for (let i = 0; i < 4; i++) {
-      game.board[i] = game.slide(game.board[i]);
-      game.board[i] = game.combine(game.board[i]);
-      game.board[i] = game.slide(game.board[i]);
+      game.board[i] = game.slideAndCombine(game.board[i]);
     }
     generateNumber();
     updateBoardToPage();
