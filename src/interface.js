@@ -2,9 +2,16 @@ $(window).on("load", event => {
   let game = new Game();
 
   $("#add").on("click", () => {
+    slideRight();
+  });
+
+  function slideRight() {
+    for (var i = 0; i < 4; i++) {
+      game.board[i] = game.slide(game.board[i]);
+    }
     generateNumber();
     updateBoardToPage();
-  });
+  }
 
   function updateBoardToPage() {
     let cells = $("td");
