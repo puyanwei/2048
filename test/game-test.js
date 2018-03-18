@@ -44,4 +44,10 @@ describe("Game", () => {
       expect(game.combine(["", "", 2, 4])).toEqual(["", "", 2, 4]);
     });
   });
+
+  describe("#slideAndCombine", () => {
+    it("slides, then combines, then slides the array", () => {
+      expect(game.slideAndCombine([2, 2, 2, 2])).toEqual([0, 0, 4, 4]);
+    });
+  });
 });

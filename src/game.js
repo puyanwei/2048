@@ -21,8 +21,8 @@ Game.prototype.isEmpty = function(number) {
   return number === "";
 };
 
-Game.prototype.slide = function(array) {
-  let noZeros = array.filter(val => val);
+Game.prototype.slide = function(row) {
+  let noZeros = row.filter(val => val);
   let missing = 4 - noZeros.length;
   let shifted = Array(missing)
     .fill("")
@@ -30,14 +30,14 @@ Game.prototype.slide = function(array) {
   return shifted;
 };
 
-Game.prototype.combine = function(array) {
+Game.prototype.combine = function(row) {
   for (let i = 3; i > 0; i--) {
-    let first = array[i];
-    let second = array[i - 1];
+    let first = row[i];
+    let second = row[i - 1];
     if (first === second) {
-      array[i] = first + second;
-      array[i - 1] = "";
+      row[i] = first + second;
+      row[i - 1] = "";
     }
   }
-  return array;
+  return row;
 };
