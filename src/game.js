@@ -74,3 +74,12 @@ Game.prototype.isChange = function(a, b) {
   }
   return false;
 };
+
+Game.prototype.reset = function() {
+  this.board = [
+    ["", "", "", ""],
+    ["", "", "", ""],
+    ["", "", "", ""],
+    ["", "", "", ""]
+  ];
+};

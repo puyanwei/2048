@@ -87,7 +87,8 @@ describe("Game", () => {
     it("resets the board", () => {
       let mockBoard = [[2, 3, 2, 2], [2, 2, 4, 2], [2, 2, 2, 2], [2, 2, 2, 2]];
       game.board = mockBoard;
-      expect(game.reset()).toEqual([
+      game.reset();
+      expect(game.board).toEqual([
         ["", "", "", ""],
         ["", "", "", ""],
         ["", "", "", ""],
