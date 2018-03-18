@@ -16,24 +16,24 @@ describe("Game", () => {
     it("puts a 2 or 4 on to the board", () => {
       game.addNumberToBoard(2, 3, 2);
       expect(game.board).toEqual([
-        [0, 0, 0, 0],
-        [0, 0, 0, 0],
-        [0, 0, 0, 0],
-        [0, 0, 2, 0]
+        ["", "", "", ""],
+        ["", "", "", ""],
+        ["", "", "", ""],
+        ["", "", 2, ""]
       ]);
     });
   });
 
   describe("#isEmpty", () => {
     it("returns true if number is zero", () => {
-      expect(game.isEmpty(0)).toBe(true);
+      expect(game.isEmpty("")).toBe(true);
       expect(game.isEmpty(2)).toBe(false);
     });
   });
 
   describe("#slide", () => {
     it("slides all the non zero numbers to the right", () => {
-      expect(game.slide([0, 4, 0, 2])).toEqual([0, 0, 4, 2]);
+      expect(game.slide(["", 4, "", 2])).toEqual(["", "", 4, 2]);
     });
   });
 });
