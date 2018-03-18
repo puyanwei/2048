@@ -22,6 +22,10 @@ Game.prototype.isEmpty = function(number) {
 };
 
 Game.prototype.slide = function(array) {
-  array = array.filter(val => val);
-  return array;
+  let noZeros = array.filter(val => val);
+  let missing = 4 - noZeros.length;
+  let shifted = Array(missing)
+    .fill(0)
+    .concat(noZeros);
+  return shifted;
 };

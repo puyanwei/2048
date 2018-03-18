@@ -33,7 +33,7 @@ describe("Game", () => {
 
   describe("#slide", () => {
     it("slides all the non zero numbers to the right", () => {
-      expect(game.slide([0, 2, 4, 0, 2])).toEqual([0, 0, 2, 4, 2]);
+      expect(game.slide([0, 4, 0, 2])).toEqual([0, 0, 4, 2]);
     });
   });
 });
