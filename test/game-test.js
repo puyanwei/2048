@@ -38,8 +38,10 @@ describe("Game", () => {
   });
 
   describe("#combine", () => {
-    it("combines numbers if they are the same", () => {
-      expect(game.slide(["", 4, "", 4])).toEqual(["", "", "", 8]);
+    it("combines numbers if they are the same and they are next to each other", () => {
+      expect(game.combine(["", "", 4, 4])).toEqual(["", "", "", 8]);
+      expect(game.combine(["", "", 2, 2])).toEqual(["", "", "", 4]);
+      expect(game.combine(["", "", 2, 4])).toEqual(["", "", 2, 4]);
     });
   });
 });

@@ -29,3 +29,15 @@ Game.prototype.slide = function(array) {
     .concat(noZeros);
   return shifted;
 };
+
+Game.prototype.combine = function(array) {
+  for (let i = 3; i > 0; i--) {
+    let first = array[i];
+    let second = array[i - 1];
+    if (first === second) {
+      array[i] = first + second;
+      array[i - 1] = "";
+    }
+  }
+  return array;
+};

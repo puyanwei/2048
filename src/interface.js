@@ -6,7 +6,7 @@ $(window).on("load", event => {
   });
 
   function slideRight() {
-    for (var i = 0; i < 4; i++) {
+    for (let i = 0; i < 4; i++) {
       game.board[i] = game.slide(game.board[i]);
     }
     generateNumber();
