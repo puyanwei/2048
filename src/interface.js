@@ -14,7 +14,6 @@ $(window).on("load", event => {
         arr.push(game.board[rows][cols]);
       }
     }
-
     for (let i = 0; i < cells.length; i++) {
       cells[i].innerText = arr[i];
     }
@@ -23,8 +22,8 @@ $(window).on("load", event => {
   function generateNumber() {
     let row = game.randomiser(4);
     let cols = game.randomiser(4);
-    let number;
-    game.randomiser(2) === 0 ? (number = 2) : (number = 4);
+    let number = game.randomiser(2);
+    number === 0 ? (number = 2) : (number = 4);
     if (game.isEmpty(game.board[row][cols])) {
       game.addNumberToBoard(number, row, cols);
     } else {
@@ -35,8 +34,8 @@ $(window).on("load", event => {
   function newGame() {
     generateNumber();
     generateNumber();
+    updateBoard();
   }
 
   newGame();
-  updateBoard();
 });
