@@ -7,8 +7,9 @@ $(window).on("load", event => {
   //   isGameOver(prevBoard);
   // });
 
-  $("#add").on("click", () => {
+  $("#restart").on("click", () => {
     game.reset();
+    newGame();
   });
 
   function slideRight() {
