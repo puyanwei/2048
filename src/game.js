@@ -83,3 +83,10 @@ Game.prototype.reset = function() {
     ["", "", "", ""]
   ];
 };
+
+Game.prototype.flip = function(grid) {
+  for (var i = 0; i < 4; i++) {
+    grid[i].reverse();
+  }
+  return grid;
+};
