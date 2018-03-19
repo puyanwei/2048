@@ -2,15 +2,19 @@ $(window).on("load", event => {
   let game = new Game();
 
   $(document).keydown(function(e) {
+    let prevBoard = game.copyBoard(game.board);
     switch (e.which) {
       case 37: // left
+        game.flip(game.board);
+        slideRight();
+        game.flip(game.board);
+        isGameOver(prevBoard);
         break;
 
       case 38: // up
         break;
 
       case 39: // right
-        let prevBoard = game.copyBoard(game.board);
         slideRight();
         isGameOver(prevBoard);
         break;
