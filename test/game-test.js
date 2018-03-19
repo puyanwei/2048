@@ -96,4 +96,18 @@ describe("Game", () => {
       ]);
     });
   });
+
+  describe("#reverse", () => {
+    it("reverses the board", () => {
+      let mockBoard = [[0, 1, 2, 3], [0, 1, 2, 3], [0, 1, 2, 3], [0, 1, 2, 3]];
+      game.board = mockBoard;
+      game.reverse(grid);
+      expect(game.board).toEqual([
+        [3, 2, 1, 0],
+        [3, 2, 1, 0],
+        [3, 2, 1, 0],
+        [3, 2, 1, 0]
+      ]);
+    });
+  });
 });
