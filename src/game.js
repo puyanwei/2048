@@ -91,23 +91,6 @@ Game.prototype.flip = function(grid) {
   return grid;
 };
 
-//transposing
-
-// array[0].map((col, i) => array.map(row => row[i]));
-
-// map calls a provided callback function once for each element in an array, in order, and constructs a new array from the results. callback is invoked only for indexes of the array which have assigned values; it is not invoked for indexes which have been deleted or which have never been assigned values.
-//
-// callback is invoked with three arguments: the value of the element, the index of the element, and the Array object being traversed.
-//
-// or
-//
-// function transpose(arr,arrLen) {
-//   for (var i = 0; i < arrLen; i++) {
-//     for (var j = 0; j <i; j++) {
-//       //swap element[i,j] and element[j,i]
-//       var temp = arr[i][j];
-//       arr[i][j] = arr[j][i];
-//       arr[j][i] = temp;
-//     }
-//   }
-// }
+Game.prototype.transpose = function(grid) {
+  return grid[0].map((column, index) => grid.map(row => row[index]));
+};

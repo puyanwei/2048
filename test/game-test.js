@@ -85,8 +85,7 @@ describe("Game", () => {
 
   describe("#reset", () => {
     it("resets the board", () => {
-      let mockBoard = [[2, 3, 2, 2], [2, 2, 4, 2], [2, 2, 2, 2], [2, 2, 2, 2]];
-      game.board = mockBoard;
+      game.board = [[2, 3, 2, 2], [2, 2, 4, 2], [2, 2, 2, 2], [2, 2, 2, 2]];
       game.reset();
       expect(game.board).toEqual([
         ["", "", "", ""],
@@ -99,9 +98,8 @@ describe("Game", () => {
 
   describe("#flip", () => {
     it("flips the board", () => {
-      let mockBoard = [[0, 1, 2, 3], [0, 1, 2, 3], [0, 1, 2, 3], [0, 1, 2, 3]];
-      game.board = mockBoard;
-      game.flip(mockBoard);
+      game.board = [[0, 1, 2, 3], [0, 1, 2, 3], [0, 1, 2, 3], [0, 1, 2, 3]];
+      game.flip(game.board);
       expect(game.board).toEqual([
         [3, 2, 1, 0],
         [3, 2, 1, 0],
@@ -112,15 +110,20 @@ describe("Game", () => {
   });
 
   describe("#transpose", () => {
-    it("rotates the grid anti clockwise", () => {
-      let mockBoard = [[0, 1, 2, 3], [0, 1, 2, 3], [0, 1, 2, 3], [0, 1, 2, 3]];
-      game.board = mockBoard;
-      game.transpose(mockBoard);
+    it("rotates the grid clockwise", () => {
+      // prettier-ignore
+      game.board = ([
+        [0, 1, 2, 3],
+        [0, 1, 2, 3],
+        [0, 1, 2, 3],
+        [0, 1, 2, 3]
+      ]);
+      game.board = game.transpose(game.board);
       expect(game.board).toEqual([
-        [3, 3, 3, 3],
-        [2, 2, 2, 2],
+        [0, 0, 0, 0],
         [1, 1, 1, 1],
-        [0, 0, 0, 0]
+        [2, 2, 2, 2],
+        [3, 3, 3, 3]
       ]);
     });
   });
