@@ -110,4 +110,18 @@ describe("Game", () => {
       ]);
     });
   });
+
+  describe("#transpose", () => {
+    it("rotates the grid anti clockwise", () => {
+      let mockBoard = [[0, 1, 2, 3], [0, 1, 2, 3], [0, 1, 2, 3], [0, 1, 2, 3]];
+      game.board = mockBoard;
+      game.transpose(mockBoard);
+      expect(game.board).toEqual([
+        [3, 3, 3, 3],
+        [2, 2, 2, 2],
+        [1, 1, 1, 1],
+        [0, 0, 0, 0]
+      ]);
+    });
+  });
 });
