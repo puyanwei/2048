@@ -8,10 +8,12 @@ $(window).on("load", event => {
         game.flip(game.board);
         slideRight();
         game.flip(game.board);
-        isGameOver(prevBoard);
         break;
 
       case 38: // up
+        game.board = game.transpose(game.board);
+        slideRight();
+        game.board = game.transpose(game.board);
         break;
 
       case 39: // right
@@ -20,11 +22,15 @@ $(window).on("load", event => {
         break;
 
       case 40: // down
+        game.board = game.transpose(game.board);
+        slideRight();
+        game.board = game.transpose(game.board);
         break;
 
       default:
         return; // exit this handler for other keys
     }
+    isGameOver(prevBoard);
     e.preventDefault(); // prevent the default action (scroll / move caret)
   });
 

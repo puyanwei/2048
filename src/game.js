@@ -91,6 +91,12 @@ Game.prototype.flip = function(grid) {
   return grid;
 };
 
-Game.prototype.transpose = function(grid) {
-  return grid[0].map((column, index) => grid.map(row => row[index]));
+Game.prototype.rotate = function(grid) {
+  for (let i = 0; i < 4; i++) {
+    for (let j = 0; j < i; j++) {
+      let array = grid[i][j];
+      grid[i][j] = grid[j][i];
+      grid[j][i] = array;
+    }
+  }
 };
