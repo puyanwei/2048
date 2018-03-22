@@ -31,7 +31,7 @@ describe("Game", () => {
     });
   });
 
-  fdescribe("#slideRight", () => {
+  describe("#slideRight", () => {
     it("slides all the non zero numbers to the right", () => {
       let mockBoard = [
         ["", "", 2, ""],
@@ -42,6 +42,23 @@ describe("Game", () => {
       expect(game.slideRight(mockBoard)).toEqual([
         ["", "", "", 2],
         ["", "", "", 2],
+        ["", "", "", ""],
+        ["", "", "", ""]
+      ]);
+    });
+  });
+
+  fdescribe("#slideLeft", () => {
+    it("slides all the non zero numbers to the right", () => {
+      let mockBoard = [
+        ["", "", 2, ""],
+        ["", "", "", 2],
+        ["", "", "", ""],
+        ["", "", "", ""]
+      ];
+      expect(game.slideRight(mockBoard)).toEqual([
+        [2, "", "", ""],
+        [2, "", "", ""],
         ["", "", "", ""],
         ["", "", "", ""]
       ]);

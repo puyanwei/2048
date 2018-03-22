@@ -31,7 +31,6 @@ Game.prototype.slideRight = function(grid) {
       .concat(arrayNoZeros);
     arrayRight.push(row);
   }
-  console.log(arrayRight);
   return arrayRight;
 };
 
