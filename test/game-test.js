@@ -112,12 +112,12 @@ describe("Game", () => {
   describe("#rotateClockwise", () => {
     it("rotates the grid clockwise", () => {
       // prettier-ignore
-      game.board = ([
+      game.board = [
         [0, 1, 2, 3],
         [0, 1, 2, 3],
         [0, 1, 2, 3],
         [0, 1, 2, 3]
-      ]);
+      ];
       game.rotateClockwise(game.board);
       expect(game.board).toEqual([
         [0, 0, 0, 0],
@@ -128,15 +128,15 @@ describe("Game", () => {
     });
   });
   describe("#reverseRows", () => {
-    it("rotates the grid anti-clockwise", () => {
+    it("rotates the grid twice", () => {
       // prettier-ignore
-      game.board = ([
-      [0, 1, 2, 3],
-      [0, 1, 2, 3],
-      [0, 1, 2, 3],
-      [0, 1, 2, 3]
-    ]);
-      game.reverseRows(game.board);
+      game.board = [
+      [0, 0, 0, 0],
+      [1, 1, 1, 1],
+      [2, 2, 2, 2],
+      [3, 3, 3, 3]
+    ];
+      game.board = game.reverseRows(game.board);
       expect(game.board).toEqual([
         [3, 3, 3, 3],
         [2, 2, 2, 2],

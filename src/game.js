@@ -99,4 +99,14 @@ Game.prototype.rotateClockwise = function(grid) {
       grid[j][i] = array;
     }
   }
+  return grid;
+};
+
+Game.prototype.reverseRows = function(grid) {
+  array = [];
+  for (var i = 3; i >= 0; i--) {
+    array.push(grid[i]);
+  }
+  grid = array;
+  return grid;
 };
