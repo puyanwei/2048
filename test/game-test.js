@@ -109,7 +109,7 @@ describe("Game", () => {
     });
   });
 
-  describe("#rotate", () => {
+  describe("#rotateClockwise", () => {
     it("rotates the grid clockwise", () => {
       // prettier-ignore
       game.board = ([
@@ -118,7 +118,7 @@ describe("Game", () => {
         [0, 1, 2, 3],
         [0, 1, 2, 3]
       ]);
-      game.rotate(game.board);
+      game.rotateClockwise(game.board);
       expect(game.board).toEqual([
         [0, 0, 0, 0],
         [1, 1, 1, 1],

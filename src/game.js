@@ -91,7 +91,7 @@ Game.prototype.flip = function(grid) {
   return grid;
 };
 
-Game.prototype.rotate = function(grid) {
+Game.prototype.rotateClockwise = function(grid) {
   for (let i = 0; i < 4; i++) {
     for (let j = 0; j < i; j++) {
       let array = grid[i][j];
