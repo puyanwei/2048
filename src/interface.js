@@ -11,11 +11,15 @@ $(window).on("load", event => {
         break;
 
       case 38: // up
+        game.flip(game.board);
+        game.rotate(game.board);
+        slideRight();
+        game.flip(game.board);
+        game.rotate(game.board);
         break;
 
       case 39: // right
         slideRight();
-        isGameOver(prevBoard);
         break;
 
       case 40: // down
@@ -27,8 +31,8 @@ $(window).on("load", event => {
       default:
         return; // exit this handler for other keys
     }
+    e.preventDefault();
     isGameOver(prevBoard);
-    e.preventDefault(); // prevent the default action (scroll / move caret)
   });
 
   $("#restart").on("click", () => {
@@ -38,7 +42,6 @@ $(window).on("load", event => {
 
   function slideRight() {
     for (let i = 0; i < 4; i++) {
-      console.log(game.board);
       game.board[i] = game.slideAndCombine(game.board[i]);
     }
   }
