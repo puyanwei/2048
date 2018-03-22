@@ -24,14 +24,27 @@ Game.prototype.isEmpty = function(number) {
 Game.prototype.slideRight = function(grid) {
   let arrayRight = new Array();
   for (let i = 0; i < 4; i++) {
-    let arrayNoZeros = grid[i].filter(val => val);
-    let missing = 4 - arrayNoZeros.length;
+    let filteredValues = grid[i].filter(val => val);
+    let missing = 4 - filteredValues.length;
     let row = Array(missing)
       .fill("")
-      .concat(arrayNoZeros);
+      .concat(filteredValues);
     arrayRight.push(row);
   }
   return arrayRight;
+};
+
+Game.prototype.slideLeft = function(grid) {
+  let arrayLeft = new Array();
+  for (let i = 0; i < 4; i++) {
+    let filteredValues = grid[i].filter(val => val);
+    let missing = 4 - filteredValues.length;
+    let row = Array(missing).fill("");
+    row = filteredValues.concat(row);
+    arrayLeft.push(row);
+  }
+  console.log(arrayLeft);
+  return arrayLeft;
 };
 
 Game.prototype.combine = function(row) {

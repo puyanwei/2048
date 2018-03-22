@@ -56,7 +56,7 @@ describe("Game", () => {
         ["", "", "", ""],
         ["", "", "", ""]
       ];
-      expect(game.slideRight(mockBoard)).toEqual([
+      expect(game.slideLeft(mockBoard)).toEqual([
         [2, "", "", ""],
         [2, "", "", ""],
         ["", "", "", ""],
