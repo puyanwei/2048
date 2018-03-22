@@ -99,8 +99,8 @@ describe("Game", () => {
   describe("#flip", () => {
     it("flips the board", () => {
       game.board = [[0, 1, 2, 3], [0, 1, 2, 3], [0, 1, 2, 3], [0, 1, 2, 3]];
-      game.flip(game.board);
-      expect(game.board).toEqual([
+      let flipped = game.flip(game.board);
+      expect(flipped).toEqual([
         [3, 2, 1, 0],
         [3, 2, 1, 0],
         [3, 2, 1, 0],
@@ -118,8 +118,8 @@ describe("Game", () => {
         [0, 1, 2, 3],
         [0, 1, 2, 3]
       ];
-      game.rotateClockwise(game.board);
-      expect(game.board).toEqual([
+      let rotatedClockwise = game.rotateClockwise(game.board);
+      expect(rotatedClockwise).toEqual([
         [0, 0, 0, 0],
         [1, 1, 1, 1],
         [2, 2, 2, 2],
@@ -136,8 +136,8 @@ describe("Game", () => {
       [2, 2, 2, 2],
       [3, 3, 3, 3]
     ];
-      game.board = game.reverseRows(game.board);
-      expect(game.board).toEqual([
+      let upsideDownGrid = game.reverseRows(game.board);
+      expect(upsideDownGrid).toEqual([
         [3, 3, 3, 3],
         [2, 2, 2, 2],
         [1, 1, 1, 1],

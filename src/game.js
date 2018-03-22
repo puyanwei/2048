@@ -85,7 +85,7 @@ Game.prototype.reset = function() {
 };
 
 Game.prototype.flip = function(grid) {
-  for (var i = 0; i < 4; i++) {
+  for (let i = 0; i < 4; i++) {
     grid[i].reverse();
   }
   return grid;
@@ -103,8 +103,8 @@ Game.prototype.rotateClockwise = function(grid) {
 };
 
 Game.prototype.reverseRows = function(grid) {
-  array = [];
-  for (var i = 3; i >= 0; i--) {
+  let array = [];
+  for (let i = 3; i >= 0; i--) {
     array.push(grid[i]);
   }
   grid = array;
