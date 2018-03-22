@@ -11,11 +11,9 @@ $(window).on("load", event => {
         break;
 
       case 38: // up
-        game.flip(game.board);
-        game.rotate(game.board);
+        game.rotateAnti(game.board);
         slideRight();
-        game.flip(game.board);
-        game.rotate(game.board);
+        game.rotateAnti(game.board);
         break;
 
       case 39: // right
@@ -23,9 +21,9 @@ $(window).on("load", event => {
         break;
 
       case 40: // down
-        game.rotate(game.board);
+        game.rotateClockwise(game.board);
         slideRight();
-        game.rotate(game.board);
+        game.rotateClockwise(game.board);
         break;
 
       default:

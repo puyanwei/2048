@@ -31,9 +31,20 @@ describe("Game", () => {
     });
   });
 
-  describe("#slide", () => {
+  fdescribe("#slideRight", () => {
     it("slides all the non zero numbers to the right", () => {
-      expect(game.slide(["", 4, "", 2])).toEqual(["", "", 4, 2]);
+      let mockBoard = [
+        ["", "", 2, ""],
+        ["", "", "", 2],
+        ["", "", "", ""],
+        ["", "", "", ""]
+      ];
+      expect(game.slideRight(mockBoard)).toEqual([
+        ["", "", "", 2],
+        ["", "", "", 2],
+        ["", "", "", ""],
+        ["", "", "", ""]
+      ]);
     });
   });
 
@@ -109,8 +120,8 @@ describe("Game", () => {
     });
   });
 
-  describe("#rotateClockwise", () => {
-    it("rotates the grid clockwise", () => {
+  describe("#rotateAnti", () => {
+    it("rotates the grid anti-clockwise", () => {
       // prettier-ignore
       game.board = [
         [0, 1, 2, 3],
@@ -118,7 +129,7 @@ describe("Game", () => {
         [0, 1, 2, 3],
         [0, 1, 2, 3]
       ];
-      let rotatedClockwise = game.rotateClockwise(game.board);
+      let rotatedClockwise = game.rotateAnti(game.board);
       expect(rotatedClockwise).toEqual([
         [0, 0, 0, 0],
         [1, 1, 1, 1],

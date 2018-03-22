@@ -21,13 +21,18 @@ Game.prototype.isEmpty = function(number) {
   return number === "";
 };
 
-Game.prototype.slide = function(row) {
-  let noZeros = row.filter(val => val);
-  let missing = 4 - noZeros.length;
-  let shifted = Array(missing)
-    .fill("")
-    .concat(noZeros);
-  return shifted;
+Game.prototype.slideRight = function(grid) {
+  let arrayRight = new Array();
+  for (let i = 0; i < 4; i++) {
+    let arrayNoZeros = grid[i].filter(val => val);
+    let missing = 4 - arrayNoZeros.length;
+    let row = Array(missing)
+      .fill("")
+      .concat(arrayNoZeros);
+    arrayRight.push(row);
+  }
+  console.log(arrayRight);
+  return arrayRight;
 };
 
 Game.prototype.combine = function(row) {
@@ -91,7 +96,7 @@ Game.prototype.flip = function(grid) {
   return grid;
 };
 
-Game.prototype.rotateClockwise = function(grid) {
+Game.prototype.rotateAnti = function(grid) {
   for (let i = 0; i < 4; i++) {
     for (let j = 0; j < i; j++) {
       let array = grid[i][j];
