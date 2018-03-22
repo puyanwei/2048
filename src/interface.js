@@ -11,9 +11,6 @@ $(window).on("load", event => {
         break;
 
       case 38: // up
-        game.board = game.transpose(game.board);
-        slideRight();
-        game.board = game.transpose(game.board);
         break;
 
       case 39: // right
@@ -22,9 +19,9 @@ $(window).on("load", event => {
         break;
 
       case 40: // down
-        game.board = game.transpose(game.board);
+        game.rotate(game.board);
         slideRight();
-        game.board = game.transpose(game.board);
+        game.rotate(game.board);
         break;
 
       default:
@@ -41,6 +38,7 @@ $(window).on("load", event => {
 
   function slideRight() {
     for (let i = 0; i < 4; i++) {
+      console.log(game.board);
       game.board[i] = game.slideAndCombine(game.board[i]);
     }
   }
