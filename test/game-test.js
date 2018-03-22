@@ -127,4 +127,22 @@ describe("Game", () => {
       ]);
     });
   });
+  describe("#reverseRows", () => {
+    it("rotates the grid anti-clockwise", () => {
+      // prettier-ignore
+      game.board = ([
+      [0, 1, 2, 3],
+      [0, 1, 2, 3],
+      [0, 1, 2, 3],
+      [0, 1, 2, 3]
+    ]);
+      game.reverseRows(game.board);
+      expect(game.board).toEqual([
+        [3, 3, 3, 3],
+        [2, 2, 2, 2],
+        [1, 1, 1, 1],
+        [0, 0, 0, 0]
+      ]);
+    });
+  });
 });
