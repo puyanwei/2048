@@ -1,6 +1,6 @@
 function Game() {
-  // prettier-ignore
-  this.board = [
+    // prettier-ignore
+    this.board = [
     ["", "", "", ""],
     ["", "", "", ""],
     ["", "", "", ""],
@@ -9,54 +9,57 @@ function Game() {
 }
 
 Game.prototype.addNumberToBoard = function(number, rows, cols) {
-  let cell = this.board[rows][cols];
-  this.board[rows][cols] = number;
+    let cell = this.board[rows][cols];
+    this.board[rows][cols] = number;
 };
 
 Game.prototype.randomiser = function(limit) {
-  return Math.floor(Math.random() * limit);
+    return Math.floor(Math.random() * limit);
 };
 
 Game.prototype.isEmpty = function(number) {
-  return number === "";
+    return number === "";
 };
 
 Game.prototype.slideRight = function(grid) {
-    console.log(grid);
-  let arrayRight = new Array();
-  for (let i = 0; i < 4; i++) {
-    let filteredValues = grid[i].filter(val => val);
-    let missing = 4 - filteredValues.length;
-    let row = Array(missing)
-      .fill("")
-      .concat(filteredValues);
-    arrayRight.push(row);
-  }
-  this.board = arrayRight;
+    let arrayRight = new Array();
+    for (let i = 0; i < 4; i++) {
+        let filteredValues = grid[i].filter(val => val);
+        let missing = 4 - filteredValues.length;
+        let row = Array(missing)
+            .fill("")
+            .concat(filteredValues);
+        arrayRight.push(row);
+    }
+    this.board = arrayRight;
+    return this.board;
 };
 
 Game.prototype.slideLeft = function(grid) {
-  let arrayLeft = new Array();
-  for (let i = 0; i < 4; i++) {
-    let filteredValues = grid[i].filter(val => val);
-    let missing = 4 - filteredValues.length;
-    let row = Array(missing).fill("");
-    row = filteredValues.concat(row);
-    arrayLeft.push(row);
-  }
-  this.board = arrayLeft;
+    let arrayLeft = new Array();
+    for (let i = 0; i < 4; i++) {
+        let filteredValues = grid[i].filter(val => val);
+        let missing = 4 - filteredValues.length;
+        let row = Array(missing).fill("");
+        row = filteredValues.concat(row);
+        arrayLeft.push(row);
+    }
+    this.board = arrayLeft;
 };
 
-Game.prototype.combine = function(row) {
-  for (let i = 3; i > 0; i--) {
-    let first = row[i];
-    let second = row[i - 1];
-    if (first === second) {
-      row[i] = first + second;
-      row[i - 1] = "";
+Game.prototype.combine = function(grid) {
+    for (var i = 0; i < 4; i++) {
+        for (let j = 3; grid[i] > 0; j--) {
+            console.log(j);
+            let first = row[j];
+            let second = row[j - 1];
+            if (first === second) {
+                row[j] = first + second;
+                row[j - 1] = "";
+            }
+        }
     }
-  }
-  return row;
+    return grid;
 };
 //
 // Game.prototype.slideAndCombine = function(row) {
@@ -67,63 +70,63 @@ Game.prototype.combine = function(row) {
 // };
 
 Game.prototype.copyBoard = function(grid) {
-  newGrid = [
-    ["", "", "", ""],
-    ["", "", "", ""],
-    ["", "", "", ""],
-    ["", "", "", ""]
-  ];
-  for (let i = 0; i < 4; i++) {
-    for (let j = 0; j < 4; j++) {
-      newGrid[i][j] = grid[i][j];
+    newGrid = [
+        ["", "", "", ""],
+        ["", "", "", ""],
+        ["", "", "", ""],
+        ["", "", "", ""]
+    ];
+    for (let i = 0; i < 4; i++) {
+        for (let j = 0; j < 4; j++) {
+            newGrid[i][j] = grid[i][j];
+        }
     }
-  }
-  return newGrid;
+    return newGrid;
 };
 
 Game.prototype.isChange = function(a, b) {
-  for (let i = 0; i < 4; i++) {
-    for (let j = 0; j < 4; j++) {
-      if (a[i][j] !== b[i][j]) {
-        return true;
-      }
+    for (let i = 0; i < 4; i++) {
+        for (let j = 0; j < 4; j++) {
+            if (a[i][j] !== b[i][j]) {
+                return true;
+            }
+        }
     }
-  }
-  return false;
+    return false;
 };
 
 Game.prototype.reset = function() {
-  this.board = [
-    ["", "", "", ""],
-    ["", "", "", ""],
-    ["", "", "", ""],
-    ["", "", "", ""]
-  ];
+    this.board = [
+        ["", "", "", ""],
+        ["", "", "", ""],
+        ["", "", "", ""],
+        ["", "", "", ""]
+    ];
 };
 
 Game.prototype.flip = function(grid) {
-  for (let i = 0; i < 4; i++) {
-    grid[i].reverse();
-  }
-  return grid;
+    for (let i = 0; i < 4; i++) {
+        grid[i].reverse();
+    }
+    return grid;
 };
 
 Game.prototype.rotateAnti = function(grid) {
-  for (let i = 0; i < 4; i++) {
-    for (let j = 0; j < i; j++) {
-      let array = grid[i][j];
-      grid[i][j] = grid[j][i];
-      grid[j][i] = array;
+    for (let i = 0; i < 4; i++) {
+        for (let j = 0; j < i; j++) {
+            let array = grid[i][j];
+            grid[i][j] = grid[j][i];
+            grid[j][i] = array;
+        }
     }
-  }
-  return grid;
+    return grid;
 };
 
 Game.prototype.reverseRows = function(grid) {
-  let array = [];
-  for (let i = 3; i >= 0; i--) {
-    array.push(grid[i]);
-  }
-  grid = array;
-  return grid;
+    let array = [];
+    for (let i = 3; i >= 0; i--) {
+        array.push(grid[i]);
+    }
+    grid = array;
+    return grid;
 };
