@@ -108,6 +108,7 @@ Game.prototype.rotateGrid = function(grid) {
             newGrid[i][j] = grid[j][i];
         }
     }
+    return newGrid;
 };
 
 Game.prototype.reverseRows = function(grid) {

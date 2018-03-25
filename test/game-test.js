@@ -148,4 +148,23 @@ describe("Game", () => {
             ]);
         });
     });
+
+    describe("#rotateGrid", () => {
+        it("rotates the grid", () => {
+            // prettier-ignore
+            game.board = [
+      [0, 0, 0, 0],
+      [1, 1, 1, 1],
+      [2, 2, 2, 2],
+      [3, 3, 3, 3]
+    ];
+            let rotated = game.rotateGrid(game.board);
+            expect(rotated).toEqual([
+                [0, 1, 2, 3],
+                [0, 1, 2, 3],
+                [0, 1, 2, 3],
+                [0, 1, 2, 3]
+            ]);
+        });
+    });
 });
