@@ -104,14 +104,5 @@ Game.prototype.rotate = function(grid, direction) {
         }
         result.push(array);
     }
-    return result;
-};
-
-Game.prototype.reverseRows = function(grid) {
-    let array = [];
-    for (let i = 3; i >= 0; i--) {
-        array.push(grid[i]);
-    }
-    grid = array;
-    return grid;
+    this.board = result;
 };

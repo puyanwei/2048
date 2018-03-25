@@ -130,25 +130,6 @@ describe("Game", () => {
         });
     });
 
-    describe("#reverseRows", () => {
-        it("rotates the grid twice", () => {
-            // prettier-ignore
-            game.board = [
-      [0, 0, 0, 0],
-      [1, 1, 1, 1],
-      [2, 2, 2, 2],
-      [3, 3, 3, 3]
-    ];
-            let upsideDownGrid = game.reverseRows(game.board);
-            expect(upsideDownGrid).toEqual([
-                [3, 3, 3, 3],
-                [2, 2, 2, 2],
-                [1, 1, 1, 1],
-                [0, 0, 0, 0]
-            ]);
-        });
-    });
-
     describe("#rotate", () => {
         it("rotates the board anti-clockwise", () => {
             // prettier-ignore
