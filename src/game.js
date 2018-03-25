@@ -59,7 +59,7 @@ Game.prototype.slideAndCombine = function(row) {
 };
 
 Game.prototype.copyBoard = function(grid) {
-    newGrid = blankGrid();
+    let newGrid = this.blankGrid();
     for (let i = 0; i < 4; i++) {
         for (let j = 0; j < 4; j++) {
             newGrid[i][j] = grid[i][j];
@@ -80,7 +80,7 @@ Game.prototype.isChange = function(a, b) {
 };
 
 Game.prototype.reset = function() {
-    this.board = blankGrid();
+    this.board = this.blankGrid();
 };
 
 Game.prototype.flip = function(grid) {
@@ -99,6 +99,15 @@ Game.prototype.flipDiagonally = function(grid) {
         }
     }
     return grid;
+};
+
+Game.prototype.rotateGrid = function(grid) {
+    let newGrid = this.blankGrid();
+    for (var i = 0; i < 4; i++) {
+        for (var j = 0; j < 4; j++) {
+            newGrid[i][j] = grid[j][i];
+        }
+    }
 };
 
 Game.prototype.reverseRows = function(grid) {

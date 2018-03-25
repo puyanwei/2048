@@ -31,34 +31,12 @@ describe("Game", () => {
         });
     });
 
-    describe("#slideRight", () => {
-        it("slides all the non zero numbers to the right", () => {
-            game.board = [
-                ["", "", 2, ""],
-                ["", "", "", 2],
+    describe("#blankGrid", () => {
+        it("returns a blank 4 by 4 grid", () => {
+            let result = game.blankGrid();
+            expect(result).toEqual([
                 ["", "", "", ""],
-                ["", "", "", ""]
-            ];
-            expect(game.slideRight()).toEqual([
-                ["", "", "", 2],
-                ["", "", "", 2],
                 ["", "", "", ""],
-                ["", "", "", ""]
-            ]);
-        });
-    });
-
-    describe("#slideLeft", () => {
-        it("slides all the non zero numbers to the left", () => {
-            game.board = [
-                ["", "", 2, ""],
-                ["", "", "", 2],
-                ["", "", "", ""],
-                ["", "", "", ""]
-            ];
-            expect(game.slideLeft()).toEqual([
-                [2, "", "", ""],
-                [2, "", "", ""],
                 ["", "", "", ""],
                 ["", "", "", ""]
             ]);
@@ -152,24 +130,6 @@ describe("Game", () => {
         });
     });
 
-    describe("#rotateAnti", () => {
-        it("rotates the grid anti-clockwise", () => {
-            // prettier-ignore
-            game.board = [
-        [0, 1, 2, 3],
-        [0, 1, 2, 3],
-        [0, 1, 2, 3],
-        [0, 1, 2, 3]
-      ];
-            let rotatedClockwise = game.rotateAnti(game.board);
-            expect(rotatedClockwise).toEqual([
-                [0, 0, 0, 0],
-                [1, 1, 1, 1],
-                [2, 2, 2, 2],
-                [3, 3, 3, 3]
-            ]);
-        });
-    });
     describe("#reverseRows", () => {
         it("rotates the grid twice", () => {
             // prettier-ignore
