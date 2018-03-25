@@ -1,9 +1,9 @@
 $(window).on("load", event => {
     let game = new Game();
 
-    $(document).keydown(function(e) {
+    $(document).keydown(function(event) {
         let prevBoard = game.copyBoard(game.board);
-        switch (e.which) {
+        switch (event.which) {
             case 37: // left
                 game.flip(game.board);
                 slideRight();
@@ -11,11 +11,9 @@ $(window).on("load", event => {
                 break;
 
             case 38: // up
-                game.flip(game.board);
-                game.flipDiagonally(game.board);
+                game.reverseRows(game.board);
                 slideRight();
-                game.flip(game.board);
-                game.flipDiagonally(game.board);
+                game.reverseRows(game.board);
                 break;
 
             case 39: // right
@@ -31,7 +29,7 @@ $(window).on("load", event => {
             default:
                 return; // exit this handler for other keys
         }
-        e.preventDefault();
+        event.preventDefault();
         isGameOver(prevBoard);
     });
 

@@ -149,8 +149,8 @@ describe("Game", () => {
         });
     });
 
-    describe("#rotateGrid", () => {
-        it("rotates the grid", () => {
+    describe("#flipDiagonally", () => {
+        it("flips the board diagonally", () => {
             // prettier-ignore
             game.board = [
       [0, 0, 0, 0],
@@ -158,8 +158,9 @@ describe("Game", () => {
       [2, 2, 2, 2],
       [3, 3, 3, 3]
     ];
-            let rotated = game.rotateGrid(game.board);
-            expect(rotated).toEqual([
+            let flipped = game.flipDiagonally(game.board);
+            // prettier-ignore
+            expect(flipped).toEqual([
                 [0, 1, 2, 3],
                 [0, 1, 2, 3],
                 [0, 1, 2, 3],

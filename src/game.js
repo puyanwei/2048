@@ -101,14 +101,15 @@ Game.prototype.flipDiagonally = function(grid) {
     return grid;
 };
 
-Game.prototype.rotateGrid = function(grid) {
-    let newGrid = this.blankGrid();
-    for (var i = 0; i < 4; i++) {
-        for (var j = 0; j < 4; j++) {
-            newGrid[i][j] = grid[j][i];
+Game.prototype.test = function(grid) {
+    for (let i = 4; i > 0; i--) {
+        for (let j = 4; j > i; j--) {
+            let array = grid[i][j];
+            grid[i][j] = grid[j][i];
+            grid[j][i] = array;
         }
     }
-    return newGrid;
+    return grid;
 };
 
 Game.prototype.reverseRows = function(grid) {
