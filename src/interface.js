@@ -27,9 +27,9 @@ $(window).on("load", event => {
                 break;
 
             default:
+                // event.preventDefault();
                 return; // exit this handler for other keys
         }
-        event.preventDefault();
         isGameOver(prevBoard);
     });
 

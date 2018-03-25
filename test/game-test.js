@@ -51,6 +51,25 @@ describe("Game", () => {
         });
     });
 
+    describe("#slideRight", () => {
+        it("slides numbers in the array to the right", () => {
+            game.board = [
+                [2, 4, "", ""],
+                [2, 2, "", ""],
+                [2, 2, "", ""],
+                [2, 2, "", ""]
+            ];
+
+            let result = game.slideRight(game.board);
+            expect(result).toEqual([
+                ["", "", 2, 4],
+                ["", "", "", 4],
+                ["", "", "", 4],
+                ["", "", "", 4]
+            ]);
+        });
+    });
+
     describe("#slideAndCombine", () => {
         it("slides, then combines, then slides the array", () => {
             expect(game.slideAndCombine([2, 2, 2, 2])).toEqual(["", "", 4, 4]);

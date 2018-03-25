@@ -55,6 +55,7 @@ Game.prototype.slideRight = function() {
     for (let i = 0; i < 4; i++) {
         this.board[i] = this.slideAndCombine(this.board[i]);
     }
+    return this.board;
 };
 
 Game.prototype.slideAndCombine = function(row) {
