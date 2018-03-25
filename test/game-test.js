@@ -149,8 +149,8 @@ describe("Game", () => {
         });
     });
 
-    describe("#flipDiagonally", () => {
-        it("flips the board diagonally", () => {
+    describe("#rotate", () => {
+        it("rotates the board anti-clockwise", () => {
             // prettier-ignore
             game.board = [
       [0, 0, 0, 0],
@@ -158,13 +158,30 @@ describe("Game", () => {
       [2, 2, 2, 2],
       [3, 3, 3, 3]
     ];
-            let flipped = game.flipDiagonally(game.board);
+            let rotatedAnti = game.rotate(game.board, "anti");
             // prettier-ignore
-            expect(flipped).toEqual([
+            expect(rotatedAnti).toEqual([
                 [0, 1, 2, 3],
                 [0, 1, 2, 3],
                 [0, 1, 2, 3],
                 [0, 1, 2, 3]
+            ]);
+        });
+        it("rotates the board clockwise", () => {
+            // prettier-ignore
+            game.board = [
+      [0, 0, 0, 0],
+      [1, 1, 1, 1],
+      [2, 2, 2, 2],
+      [3, 3, 3, 3]
+    ];
+            let rotatedClockwise = game.rotate(game.board, "clockwise");
+            // prettier-ignore
+            expect(rotatedClockwise).toEqual([
+                [3, 2, 1, 0],
+                [3, 2, 1, 0],
+                [3, 2, 1, 0],
+                [3, 2, 1, 0]
             ]);
         });
     });

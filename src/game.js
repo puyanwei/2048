@@ -90,26 +90,21 @@ Game.prototype.flip = function(grid) {
     return grid;
 };
 
-Game.prototype.flipDiagonally = function(grid) {
-    for (let i = 0; i < 4; i++) {
-        for (let j = 0; j < i; j++) {
-            let array = grid[i][j];
-            grid[i][j] = grid[j][i];
-            grid[j][i] = array;
+Game.prototype.rotate = function(grid, direction) {
+    let result = [];
+    for (i = 0; i < grid[0].length; ++i) {
+        array = [];
+        for (j = 0; j < 4; ++j) {
+            if (direction === "clockwise") {
+                array.push(grid[4 - j - 1][i]);
+            }
+            if (direction === "anti") {
+                array.push(grid[j][grid[0].length - i - 1]);
+            }
         }
+        result.push(array);
     }
-    return grid;
-};
-
-Game.prototype.test = function(grid) {
-    for (let i = 4; i > 0; i--) {
-        for (let j = 4; j > i; j--) {
-            let array = grid[i][j];
-            grid[i][j] = grid[j][i];
-            grid[j][i] = array;
-        }
-    }
-    return grid;
+    return result;
 };
 
 Game.prototype.reverseRows = function(grid) {
