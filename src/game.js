@@ -22,6 +22,7 @@ Game.prototype.isEmpty = function(number) {
 };
 
 Game.prototype.slideRight = function(grid) {
+    console.log(grid);
   let arrayRight = new Array();
   for (let i = 0; i < 4; i++) {
     let filteredValues = grid[i].filter(val => val);
@@ -31,7 +32,7 @@ Game.prototype.slideRight = function(grid) {
       .concat(filteredValues);
     arrayRight.push(row);
   }
-  return arrayRight;
+  this.board = arrayRight;
 };
 
 Game.prototype.slideLeft = function(grid) {
@@ -43,8 +44,7 @@ Game.prototype.slideLeft = function(grid) {
     row = filteredValues.concat(row);
     arrayLeft.push(row);
   }
-  console.log(arrayLeft);
-  return arrayLeft;
+  this.board = arrayLeft;
 };
 
 Game.prototype.combine = function(row) {
@@ -58,13 +58,13 @@ Game.prototype.combine = function(row) {
   }
   return row;
 };
-
-Game.prototype.slideAndCombine = function(row) {
-  row = this.slide(row);
-  row = this.combine(row);
-  row = this.slide(row);
-  return row;
-};
+//
+// Game.prototype.slideAndCombine = function(row) {
+//   row = this.slide(row);
+//   row = this.combine(row);
+//   row = this.slide(row);
+//   return row;
+// };
 
 Game.prototype.copyBoard = function(grid) {
   newGrid = [

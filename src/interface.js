@@ -5,25 +5,17 @@ $(window).on("load", event => {
     let prevBoard = game.copyBoard(game.board);
     switch (e.which) {
       case 37: // left
-        game.flip(game.board);
-        slideRight();
-        game.flip(game.board);
+        game.slideLeft(game.board)
         break;
 
       case 38: // up
-        game.rotateAnti(game.board);
-        slideRight();
-        game.rotateAnti(game.board);
         break;
 
       case 39: // right
-        slideRight();
+        game.slideRight(game.board);
         break;
 
       case 40: // down
-        game.rotateClockwise(game.board);
-        slideRight();
-        game.rotateClockwise(game.board);
         break;
 
       default:
@@ -37,12 +29,6 @@ $(window).on("load", event => {
     game.reset();
     newGame();
   });
-
-  function slideRight() {
-    for (let i = 0; i < 4; i++) {
-      game.board[i] = game.slideAndCombine(game.board[i]);
-    }
-  }
 
   function isGameOver(prevBoard) {
     let changed = game.isChange(prevBoard, game.board);
