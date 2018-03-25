@@ -31,7 +31,7 @@ describe("Game", () => {
         });
     });
 
-    fdescribe("#slideRight", () => {
+    describe("#slideRight", () => {
         it("slides all the non zero numbers to the right", () => {
             let mockBoard = [
                 ["", "", 2, ""],
@@ -48,7 +48,7 @@ describe("Game", () => {
         });
     });
 
-    describe("#slideLeft", () => {
+    fdescribe("#slideLeft", () => {
         it("slides all the non zero numbers to the left", () => {
             let mockBoard = [
                 ["", "", 2, ""],

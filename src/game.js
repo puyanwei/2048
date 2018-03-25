@@ -45,6 +45,7 @@ Game.prototype.slideLeft = function(grid) {
         arrayLeft.push(row);
     }
     this.board = arrayLeft;
+    return this.board;
 };
 
 Game.prototype.combine = function(grid) {
