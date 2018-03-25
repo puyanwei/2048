@@ -8,6 +8,15 @@ function Game() {
   ];
 }
 
+Game.prototype.blankGrid = function() {
+    return [
+        ["", "", "", ""],
+        ["", "", "", ""],
+        ["", "", "", ""],
+        ["", "", "", ""]
+    ];
+};
+
 Game.prototype.addNumberToBoard = function(number, rows, cols) {
     let cell = this.board[rows][cols];
     this.board[rows][cols] = number;
@@ -50,12 +59,7 @@ Game.prototype.slideAndCombine = function(row) {
 };
 
 Game.prototype.copyBoard = function(grid) {
-    newGrid = [
-        ["", "", "", ""],
-        ["", "", "", ""],
-        ["", "", "", ""],
-        ["", "", "", ""]
-    ];
+    newGrid = blankGrid();
     for (let i = 0; i < 4; i++) {
         for (let j = 0; j < 4; j++) {
             newGrid[i][j] = grid[i][j];
@@ -76,12 +80,7 @@ Game.prototype.isChange = function(a, b) {
 };
 
 Game.prototype.reset = function() {
-    this.board = [
-        ["", "", "", ""],
-        ["", "", "", ""],
-        ["", "", "", ""],
-        ["", "", "", ""]
-    ];
+    this.board = blankGrid();
 };
 
 Game.prototype.flip = function(grid) {
