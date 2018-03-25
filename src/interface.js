@@ -6,23 +6,23 @@ $(window).on("load", event => {
         switch (event.which) {
             case 37: // left
                 game.flip(game.board);
-                slideRight();
+                game.slideRight();
                 game.flip(game.board);
                 break;
 
             case 38: // up
-                game.rotate(game.board, "clockwise");
-                slideRight();
-                game.rotate(game.board, "anti");
+                game.rotate("clockwise");
+                game.slideRight();
+                game.rotate("anti");
                 break;
 
             case 39: // right
-                slideRight();
+                game.slideRight();
                 break;
 
             case 40: // down
                 game.rotate(game.board, "anti");
-                slideRight();
+                game.slideRight();
                 game.rotate(game.board, "clockwise");
                 break;
 
@@ -37,12 +37,6 @@ $(window).on("load", event => {
         game.reset();
         newGame();
     });
-
-    function slideRight() {
-        for (let i = 0; i < 4; i++) {
-            game.board[i] = game.slideAndCombine(game.board[i]);
-        }
-    }
 
     function isGameOver(prevBoard) {
         let changed = game.isChange(prevBoard, game.board);

@@ -51,6 +51,12 @@ Game.prototype.combine = function(row) {
     return row;
 };
 
+Game.prototype.slideRight = function() {
+    for (let i = 0; i < 4; i++) {
+        this.board[i] = this.slideAndCombine(this.board[i]);
+    }
+};
+
 Game.prototype.slideAndCombine = function(row) {
     row = this.slide(row);
     row = this.combine(row);
@@ -105,4 +111,5 @@ Game.prototype.rotate = function(grid, direction) {
         result.push(array);
     }
     this.board = result;
+    return result;
 };
