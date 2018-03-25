@@ -33,13 +33,13 @@ describe("Game", () => {
 
     describe("#slideRight", () => {
         it("slides all the non zero numbers to the right", () => {
-            let mockBoard = [
+            game.board = [
                 ["", "", 2, ""],
                 ["", "", "", 2],
                 ["", "", "", ""],
                 ["", "", "", ""]
             ];
-            expect(game.slideRight(mockBoard)).toEqual([
+            expect(game.slideRight()).toEqual([
                 ["", "", "", 2],
                 ["", "", "", 2],
                 ["", "", "", ""],
@@ -48,15 +48,15 @@ describe("Game", () => {
         });
     });
 
-    fdescribe("#slideLeft", () => {
+    describe("#slideLeft", () => {
         it("slides all the non zero numbers to the left", () => {
-            let mockBoard = [
+            game.board = [
                 ["", "", 2, ""],
                 ["", "", "", 2],
                 ["", "", "", ""],
                 ["", "", "", ""]
             ];
-            expect(game.slideLeft(mockBoard)).toEqual([
+            expect(game.slideLeft()).toEqual([
                 [2, "", "", ""],
                 [2, "", "", ""],
                 ["", "", "", ""],

@@ -5,8 +5,7 @@ $(window).on("load", event => {
         let prevBoard = game.copyBoard(game.board);
         switch (e.which) {
             case 37: // left
-                game.slideLeft(game.board);
-                game.combine(game.board);
+                game.slideLeft();
                 break;
 
             case 38: // up
@@ -14,7 +13,6 @@ $(window).on("load", event => {
 
             case 39: // right
                 game.slideRight(game.board);
-                game.combine(game.board);
                 break;
 
             case 40: // down

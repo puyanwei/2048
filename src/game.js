@@ -21,10 +21,10 @@ Game.prototype.isEmpty = function(number) {
     return number === "";
 };
 
-Game.prototype.slideRight = function(grid) {
+Game.prototype.slideRight = function() {
     let arrayRight = new Array();
     for (let i = 0; i < 4; i++) {
-        let filteredValues = grid[i].filter(val => val);
+        let filteredValues = this.board[i].filter(val => val);
         let missing = 4 - filteredValues.length;
         let row = Array(missing)
             .fill("")
@@ -35,29 +35,27 @@ Game.prototype.slideRight = function(grid) {
     return this.board;
 };
 
-Game.prototype.slideLeft = function(grid) {
+Game.prototype.slideLeft = function() {
     let arrayLeft = new Array();
     for (let i = 0; i < 4; i++) {
-        let filteredValues = grid[i].filter(val => val);
+        let filteredValues = this.board[i].filter(val => val);
         let missing = 4 - filteredValues.length;
         let row = Array(missing).fill("");
         row = filteredValues.concat(row);
         arrayLeft.push(row);
     }
     this.board = arrayLeft;
+    console.log(this.board);
     return this.board;
 };
 
-Game.prototype.combine = function(grid) {
-    for (var i = 0; i < 4; i++) {
-        for (let j = 3; grid[i] > 0; j--) {
-            console.log(j);
-            let first = row[j];
-            let second = row[j - 1];
-            if (first === second) {
-                row[j] = first + second;
-                row[j - 1] = "";
-            }
+Game.prototype.combine = function(row) {
+    for (let j = 3; row[i] > 0; j--) {
+        let first = row[j];
+        let second = row[j - 1];
+        if (first === second) {
+            row[j] = first + second;
+            row[j - 1] = "";
         }
     }
     return grid;
