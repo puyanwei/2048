@@ -60,7 +60,7 @@ describe("Game", () => {
     });
 
     describe("#copyBoard", () => {
-        it("copies the 4 x 4 board state", () => {
+        it("copies the 4 by 4 board state", () => {
             let mockBoard = [
                 [2, 3, 2, 2],
                 [2, 2, 4, 2],

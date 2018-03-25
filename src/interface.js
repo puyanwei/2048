@@ -11,9 +11,9 @@ $(window).on("load", event => {
                 break;
 
             case 38: // up
-                game.rotate("clockwise");
+                game.rotate(game.board, "clockwise");
                 game.slideRight();
-                game.rotate("anti");
+                game.rotate(game.board, "anti");
                 break;
 
             case 39: // right
