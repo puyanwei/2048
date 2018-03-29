@@ -1,7 +1,7 @@
-$(window).on("load", event => {
+$(document).ready(() => {
     let game = new Game();
 
-    $(document).keydown(function(event) {
+    $(document).keydown((event) => {
         let prevBoard = game.copyBoard(game.board);
         switch (event.which) {
             case 37: // left
@@ -11,9 +11,9 @@ $(window).on("load", event => {
                 break;
 
             case 38: // up
-                game.rotate(game.board, "clockwise");
+                game.rotate(game.board, 'clockwise');
                 game.slideRight();
-                game.rotate(game.board, "anti");
+                game.rotate(game.board, 'anti');
                 break;
 
             case 39: // right
@@ -21,9 +21,9 @@ $(window).on("load", event => {
                 break;
 
             case 40: // down
-                game.rotate(game.board, "anti");
+                game.rotate(game.board, 'anti');
                 game.slideRight();
-                game.rotate(game.board, "clockwise");
+                game.rotate(game.board, 'clockwise');
                 break;
 
             default:
@@ -33,10 +33,14 @@ $(window).on("load", event => {
         isGameOver(prevBoard);
     });
 
-    $("#restart").on("click", () => {
+    $('#restart').on('click', () => {
         game.reset();
         newGame();
     });
+
+    function sayGameOver() {
+        $('#game-over').text('Game Over, No more moves');
+    }
 
     function isGameOver(prevBoard) {
         let changed = game.isChange(prevBoard, game.board);
@@ -44,12 +48,12 @@ $(window).on("load", event => {
             generateNumber();
             updateBoardToPage();
         } else {
-            console.log("game over");
+            sayGameOver();
         }
     }
 
     function updateBoardToPage() {
-        let cells = $("td");
+        let cells = $('td');
         let arr = [];
         for (let rows = 0; rows < game.board.length; rows++) {
             for (let cols = 0; cols < game.board[rows].length; cols++) {
