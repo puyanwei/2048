@@ -142,6 +142,17 @@ describe('Game', () => {
                 ['', '', '', ''],
             ]);
         });
+        it('resets the score and moves back to zero', () => {
+            game.board = [
+                [2, 3, 2, 2],
+                [2, 2, 4, 2],
+                [2, 2, 2, 2],
+                [2, 2, 2, 2],
+            ];
+            game.reset();
+            expect(game.score).toEqual(0);
+            expect(game.count).toEqual(0);
+        });
     });
 
     describe('#flip', () => {
