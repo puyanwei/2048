@@ -30,14 +30,12 @@ $(document).ready(() => {
                 // event.preventDefault();
                 return; // exit this handler for other keys
         }
-        if (game.count === 0) {
-            game.count++;
-        }
-        addMovesToPage();
-        addScoreToPage();
-        nextMove(prevBoard);
         if (game.isGameOver(game.board)) {
             sayGameOver();
+        } else {
+            nextMove(prevBoard);
+            addMovesToPage();
+            addScoreToPage();
         }
     });
 
