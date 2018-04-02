@@ -117,3 +117,22 @@ Game.prototype.rotate = function(grid, direction) {
     this.board = result;
     return result;
 };
+
+Game.prototype.isGameOver = function(grid) {
+    // checks every cell for any blank ''
+    for (let i = 0; i < 4; i++) {
+        for (let j = 0; j < 4; j++) {
+            if (grid[i][j] === '') {
+                return false;
+            }
+            // checks outer edges cells for duplicate numbers next to them
+            if (j !== 3 && grid[i][j] === grid[i][j + 1]) {
+                return false;
+            }
+            if (i !== 3 && grid[i][j] === grid[i + 1][j]) {
+                return false;
+            }
+        }
+    }
+    return true;
+};
