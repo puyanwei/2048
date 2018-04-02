@@ -27,9 +27,11 @@ $(document).ready(() => {
                 break;
 
             default:
-                // event.preventDefault();
+                event.preventDefault();
                 return; // exit this handler for other keys
         }
+        game.count++;
+        addMovesToPage();
         addScoreToPage();
         isGameOver(prevBoard);
     });
@@ -68,6 +70,10 @@ $(document).ready(() => {
 
     function addScoreToPage() {
         $('#score').text(game.score);
+    }
+
+    function addMovesToPage() {
+        $('#moves').text(game.count);
     }
 
     function generateNumber() {
