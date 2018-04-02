@@ -30,7 +30,9 @@ $(document).ready(() => {
                 // event.preventDefault();
                 return; // exit this handler for other keys
         }
-        game.count++;
+        if (game.count === 0) {
+            game.count++;
+        }
         addMovesToPage();
         addScoreToPage();
         nextMove(prevBoard);
@@ -51,6 +53,7 @@ $(document).ready(() => {
     function nextMove(prevBoard) {
         let changed = game.isChange(prevBoard, game.board);
         if (changed) {
+            game.count++;
             generateNumber();
             updateBoardToPage();
         }
