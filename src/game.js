@@ -91,6 +91,8 @@ Game.prototype.isChange = function(a, b) {
 
 Game.prototype.reset = function() {
     this.board = this.blankGrid();
+    this.score = 0;
+    this.count = 0;
 };
 
 Game.prototype.flip = function(grid) {

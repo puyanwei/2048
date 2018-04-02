@@ -41,6 +41,8 @@ $(document).ready(() => {
 
     $('#restart').on('click', () => {
         game.reset();
+        $('#score').text('0');
+        $('#count').text('0');
         newGame();
     });
 
@@ -75,7 +77,7 @@ $(document).ready(() => {
     }
 
     function addMovesToPage() {
-        $('#moves').text(game.count);
+        $('#count').text(game.count);
     }
 
     function generateNumber() {
