@@ -200,15 +200,35 @@ describe('Game', () => {
     });
 
     describe('#isGameOver', () => {
-        it('returns true if there are no more moves left', () => {
-            game.board = [
+        it('returns true because are no more moves left', () => {
+            mockBoardOne = [
                 [16, 32, 8, 4],
                 [4, 16, 128, 2],
                 [8, 2, 8, 16],
                 [4, 8, 16, 8],
             ];
-            let result = game.isGameOver(game.board);
+            let result = game.isGameOver(mockBoardOne);
             expect(result).toBe(true);
+        });
+        it('returns false because are moves left', () => {
+            mockBoardTwo = [
+                [16, 32, 4, 4],
+                [4, 16, 128, 2],
+                [8, 2, 8, 16],
+                [4, 8, 16, 8],
+            ];
+            let result = game.isGameOver(mockBoardTwo);
+            expect(result).toBe(false);
+        });
+        it('returns false because are blank cells left', () => {
+            mockBoardThree = [
+                [16, 32, 8, 4],
+                [4, 16, 128, 2],
+                [8, 2, '', 16],
+                [4, 8, 16, 8],
+            ];
+            let result = game.isGameOver(mockBoardThree);
+            expect(result).toBe(false);
         });
     });
 });
