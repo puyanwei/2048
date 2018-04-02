@@ -6,14 +6,15 @@ function Game() {
     ["", "", "", ""],
     ["", "", "", ""]
   ];
+    this.score = 0;
 }
 
 Game.prototype.blankGrid = function() {
     return [
-        ["", "", "", ""],
-        ["", "", "", ""],
-        ["", "", "", ""],
-        ["", "", "", ""]
+        ['', '', '', ''],
+        ['', '', '', ''],
+        ['', '', '', ''],
+        ['', '', '', ''],
     ];
 };
 
@@ -27,14 +28,14 @@ Game.prototype.randomiser = function(limit) {
 };
 
 Game.prototype.isEmpty = function(number) {
-    return number === "";
+    return number === '';
 };
 
 Game.prototype.slide = function(row) {
-    let noZeros = row.filter(val => val);
+    let noZeros = row.filter((val) => val);
     let missing = 4 - noZeros.length;
     let shifted = Array(missing)
-        .fill("")
+        .fill('')
         .concat(noZeros);
     return shifted;
 };
@@ -45,7 +46,7 @@ Game.prototype.combine = function(row) {
         let second = row[i - 1];
         if (first === second) {
             row[i] = first + second;
-            row[i - 1] = "";
+            row[i - 1] = '';
         }
     }
     return row;
@@ -102,10 +103,10 @@ Game.prototype.rotate = function(grid, direction) {
     for (i = 0; i < grid[0].length; ++i) {
         array = [];
         for (j = 0; j < 4; ++j) {
-            if (direction === "clockwise") {
+            if (direction === 'clockwise') {
                 array.push(grid[4 - j - 1][i]);
             }
-            if (direction === "anti") {
+            if (direction === 'anti') {
                 array.push(grid[j][grid[0].length - i - 1]);
             }
         }
