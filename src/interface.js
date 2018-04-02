@@ -27,7 +27,7 @@ $(document).ready(() => {
                 break;
 
             default:
-                // event.preventDefault();
+                event.preventDefault();
                 return; // exit this handler for other keys
         }
         if (game.isGameOver(game.board)) {
@@ -50,13 +50,12 @@ $(document).ready(() => {
         $('#game-over').text('Game Over, No more moves');
     }
 
-    function nextMove(prevBoard) {
-        let changed = game.isChange(prevBoard, game.board);
-        if (changed) {
-            game.count++;
-            generateNumber();
-            updateBoardToPage();
-        }
+    function addScoreToPage() {
+        $('#score').text(game.score);
+    }
+
+    function addMovesToPage() {
+        $('#count').text(game.count);
     }
 
     function updateBoardToPage() {
@@ -72,14 +71,14 @@ $(document).ready(() => {
         }
     }
 
-    function addScoreToPage() {
-        $('#score').text(game.score);
+    function nextMove(prevBoard) {
+        let changed = game.isChange(prevBoard, game.board);
+        if (changed) {
+            game.count++;
+            generateNumber();
+            updateBoardToPage();
+        }
     }
-
-    function addMovesToPage() {
-        $('#count').text(game.count);
-    }
-
     function generateNumber() {
         let row = game.randomiser(4);
         let cols = game.randomiser(4);
