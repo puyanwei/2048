@@ -38,7 +38,8 @@ open specRunner.html
 ### Quality Control
 
 *   Good testing coverage.
-*   Good naming conventions, functions are descriptive and as short as possible using the Single Responsibility Principle.
+*   Good naming conventions, functions are short as possible using the Single Responsibility Principle, refactor repetition code.
+*   Code is readable for humans! Descriptive function names over writing comments.
 *   Small commits and good descriptions.
 
 ### Future Improvements
