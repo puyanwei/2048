@@ -44,8 +44,9 @@ Game.prototype.combine = function(row) {
     for (let i = 3; i > 0; i--) {
         let first = row[i];
         let second = row[i - 1];
-        if (first === second) {
+        if (first === second && first !== '' && second !== '') {
             row[i] = first + second;
+            this.score += row[i];
             row[i - 1] = '';
         }
     }
