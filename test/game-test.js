@@ -198,4 +198,17 @@ describe('Game', () => {
             ]);
         });
     });
+
+    describe('#isGameOver', () => {
+        it('returns true if there are no more moves left', () => {
+            game.board = [
+                [16, 32, 8, 4],
+                [4, 16, 128, 2],
+                [8, 2, 8, 16],
+                [4, 8, 16, 8],
+            ];
+            let result = game.isGameOver(game.board);
+            expect(result).toBe(true);
+        });
+    });
 });
