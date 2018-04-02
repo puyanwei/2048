@@ -33,7 +33,7 @@ $(document).ready(() => {
         game.count++;
         addMovesToPage();
         addScoreToPage();
-        isGameOver(prevBoard);
+        canMove(prevBoard);
     });
 
     $('#restart').on('click', () => {
@@ -45,13 +45,11 @@ $(document).ready(() => {
         $('#game-over').text('Game Over, No more moves');
     }
 
-    function isGameOver(prevBoard) {
+    function canMove(prevBoard) {
         let changed = game.isChange(prevBoard, game.board);
         if (changed) {
             generateNumber();
             updateBoardToPage();
-        } else {
-            sayGameOver();
         }
     }
 
