@@ -56,6 +56,8 @@ describe('Game', () => {
             this.score = 0;
             game.combine(['', '', 4, 4]);
             expect(game.score).toEqual(8);
+            game.combine(['', '', 8, 8]);
+            expect(game.score).toEqual(24);
         });
     });
 
