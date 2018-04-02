@@ -30,6 +30,7 @@ $(document).ready(() => {
                 // event.preventDefault();
                 return; // exit this handler for other keys
         }
+        addScoreToPage();
         isGameOver(prevBoard);
     });
 
@@ -63,6 +64,10 @@ $(document).ready(() => {
         for (let i = 0; i < cells.length; i++) {
             cells[i].innerText = arr[i];
         }
+    }
+
+    function addScoreToPage() {
+        $('#score').text(game.score);
     }
 
     function generateNumber() {
