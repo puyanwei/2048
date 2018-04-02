@@ -52,6 +52,11 @@ describe('Game', () => {
             expect(game.combine(['', '', 2, 2])).toEqual(['', '', '', 4]);
             expect(game.combine(['', '', 2, 4])).toEqual(['', '', 2, 4]);
         });
+        it('adds the combined numbers to the score', () => {
+            this.score = 0;
+            game.combine(['', '', 4, 4]);
+            expect(game.score).toEqual(8);
+        });
     });
 
     describe('#slideRight', () => {
