@@ -13,6 +13,9 @@ describe('Game', () => {
         it('starts with a score of zero', () => {
             expect(game.score).toEqual(0);
         });
+        it('starts the game with a move count of zero', () => {
+            expect(game.count).toEqual(0);
+        });
     });
 
     describe('#addNumberToBoard', () => {
@@ -52,7 +55,7 @@ describe('Game', () => {
             expect(game.combine(['', '', 2, 2])).toEqual(['', '', '', 4]);
             expect(game.combine(['', '', 2, 4])).toEqual(['', '', 2, 4]);
         });
-        fit('adds the combined numbers to the score', () => {
+        it('adds the combined numbers to the score', () => {
             this.score = 0;
             game.combine(['', '', 4, 4]);
             expect(game.score).toEqual(8);

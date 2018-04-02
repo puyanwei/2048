@@ -1,4 +1,6 @@
 function Game() {
+    this.score = 0;
+    this.count = 0;
     // prettier-ignore
     this.board = [
     ["", "", "", ""],
@@ -6,7 +8,6 @@ function Game() {
     ["", "", "", ""],
     ["", "", "", ""]
   ];
-    this.score = 0;
 }
 
 Game.prototype.blankGrid = function() {
