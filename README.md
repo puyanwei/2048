@@ -1,6 +1,6 @@
 # 2048
 
-Recreation of the famous sliding block puzzle [game](https://en.wikipedia.org/wiki/2048_(video_game) originally coded by Gabriele Cirulli.
+Recreation of the famous sliding block puzzle [game](<https://en.wikipedia.org/wiki/2048_(video_game)>) originally coded by Gabriele Cirulli.
 
 ![screen shot 2018-04-02 at 16 22 55](https://user-images.githubusercontent.com/14803518/38202037-49a14504-3692-11e8-808e-d7edbdae8bf6.png)
 
