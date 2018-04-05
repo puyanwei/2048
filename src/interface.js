@@ -86,7 +86,6 @@ $(document).ready(() => {
         number === 0 ? (number = 2) : (number = 4);
         if (game.isEmpty(game.board[row][cols])) {
             game.addNumberToBoard(number, row, cols);
-            $('td')[3].style.backgroundColor = 'red';
         } else {
             generateNumber();
         }

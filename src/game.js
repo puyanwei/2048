@@ -120,7 +120,7 @@ Game.prototype.rotate = function(grid, direction) {
     return result;
 };
 
-Game.prototype.isGameOver = function(grid) {
+Game.prototype.hasNoMoves = function(grid) {
     // checks every cell for any blank ''
     for (let i = 0; i < 4; i++) {
         for (let j = 0; j < 4; j++) {
