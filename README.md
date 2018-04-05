@@ -16,6 +16,8 @@ cd 2048
 open index.html
 ```
 
+Live version working [here](https://puyanwei.github.io/2048/)
+
 For testing
 
 ```
