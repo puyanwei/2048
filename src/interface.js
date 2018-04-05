@@ -1,5 +1,6 @@
 $(document).ready(() => {
     let game = new Game();
+    newGame();
 
     $(document).keydown((event) => {
         let prevBoard = game.copyBoard(game.board);
@@ -66,6 +67,7 @@ $(document).ready(() => {
     function updateBoardToPage() {
         let cells = $('td');
         let arr = [];
+
         for (let rows = 0; rows < game.board.length; rows++) {
             for (let cols = 0; cols < game.board[rows].length; cols++) {
                 arr.push(game.board[rows][cols]);
@@ -101,6 +103,4 @@ $(document).ready(() => {
         generateNumber();
         updateBoardToPage();
     }
-
-    newGame();
 });
