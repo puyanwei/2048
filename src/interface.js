@@ -30,19 +30,24 @@ $(document).ready(() => {
                 event.preventDefault();
                 return; // exit this handler for other keys
         }
-        if (game.isGameOver(game.board)) {
+        moveController(prevBoard);
+    });
+
+    function moveController(prevBoard) {
+        if (game.hasNoMoves(game.board)) {
             sayGameOver();
         } else {
             nextMove(prevBoard);
             addMovesToPage();
             addScoreToPage();
         }
-    });
+    }
 
     $('#restart').on('click', () => {
         game.reset();
         $('#score').text('0');
         $('#count').text('0');
+        $('#game-over').text('');
         newGame();
     });
 
