@@ -1,4 +1,5 @@
 function Game() {
+    debugger;
     this.score = 0;
     this.count = 0;
     // prettier-ignore
