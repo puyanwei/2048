@@ -10,13 +10,13 @@ Use the up, down, left and right arrow keys to play.
 
 ### Installation
 
+Live version working [here](https://puyanwei.github.io/2048/)
+
 ```
 git clone git@github.com:puyanwei/2048.git
 cd 2048
 open index.html
 ```
-
-Live version working [here](https://puyanwei.github.io/2048/)
 
 For testing
 
